@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Money {
+public class money {
     
     public static void main(String[] args) throws Exception {
 

@@ -37,9 +37,9 @@ public class bank {
 
         //Outputs
         System.out.println("-----Balances-----");
-        System.out.printf("ID is %05d, balance is $%.2f", User1, bal1);
+        System.out.printf("ID is %05d, balance is $%.2f%n", User1, bal1);
         System.out.printf("ID is %05d, balance is $%.2f%n", User2, bal2);
-        System.out.printf("ID is %05d, balance is $%.2f%n", User3, bal3);
+        System.out.printf("ID is %05d, balance is $%.2f", User3, bal3);
         
 
     }
