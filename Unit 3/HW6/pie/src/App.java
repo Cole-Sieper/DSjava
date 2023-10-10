@@ -10,20 +10,20 @@ public class App {
         Scanner in = new Scanner(System.in);
 
         //inititalize values
-        int pie_order = 0;
+        double pieorder;
         double price_pie = 10.0;
         double discount = 0.9; //10% discount fro people who buy 3 or more pies
-        double subtotal = pie_order*price_pie;
+        double subtotal = 0;
 
         //inputs
-        System.out.println("Welcome! How many pies would you like? (3 or more get 10% off): ");
-        pie_order = in.nextInt();
+        System.out.print("Welcome! How many pies would you like? (3 or more get 10% off): ");
+        pieorder = in.nextInt();
 
         //let customer know they get a discount
-        if (pie_order >= 3) {
+        if (pieorder >= 3) {
 
             System.out.println("You get 10% off for your order size!");
-            subtotal = subtotal * discount;
+            subtotal = (pieorder*price_pie) * discount;
         }
 
         // let custoemr knwo the total
