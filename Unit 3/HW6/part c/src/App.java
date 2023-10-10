@@ -14,12 +14,13 @@ public class App {
         double b= 3.0;
         final double EPSILON = 1E-14; // add epsilon to measue if the number is close
         double c = a * b; 
+
+        //this checks to see if the value is very very close to the value
+        //instead of it checking for a perfect equalt to value
         if(Math.abs(c - 3.6) < EPSILON){
-        System.out.println("c is 3.6");
+        System.out.println("c is ~ 3.6");
         } else {
         System.out.println("c is not 3.6");
         }
-
-        System.out.println(c);
     }
 }
