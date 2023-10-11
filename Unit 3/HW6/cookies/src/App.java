@@ -10,8 +10,8 @@ public class App {
 
         //initialize variables
         int numorder = 0;
-        double subtotal = 0;
         double cookie_price = 0.99;
+        double subtotal = numorder*cookie_price;
         double offer1 = 0.975;
         double offer2 = 0.95;
         double offer3 = 0.85;
@@ -36,7 +36,7 @@ public class App {
                 if (numorder >= 6) { // checks the 6 cooke discount
                     subtotal = cookie_price*numorder*offer1;
                     System.out.println("You get a 2.5% discount!");
-                }
+                } else {subtotal = numorder*cookie_price;}
             }
         }
     
