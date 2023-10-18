@@ -57,7 +57,7 @@ public class App {
         
         //sorting and calulating discounts
         if (day == "Monday") {
-            if(age > 49) {
+            if(SENIOR) {
                 System.out.println("You get 15% off!");
                 mealcost = mealcost * mondiscount50;
              } 
