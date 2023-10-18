@@ -69,15 +69,15 @@ public class App {
                     mealcost = mealcost * tuesdiscount13;
                 } else {
                     if(age >= 50) {
-                System.out.println("You get 7.5% off!");
+                System.out.println("You get 15% off!");
                 mealcost = mealcost * tuesdiscount50;
             } else {
                 if (age < 13) {
-                    System.out.println("You get 5% off!");
+                    System.out.println("You get 7.5% off!");
                     mealcost = mealcost * tuesdiscount13;
                 } else {
                     
-                    System.out.println("Sorry, there are no discoutns available today :(");
+                    System.out.println("Sorry, there are no discounts available today :(");
                     
                 }}}}}}}
 
