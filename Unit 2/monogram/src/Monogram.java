@@ -30,9 +30,11 @@ public class Monogram {
         String mi = mn.substring(0, 1); // taking first letter of middle name
         String li = ln.substring(0, 1); // taking first letter of last name
 
+        String Monogram = fi+mi+li;
+
         //Output
         System.out.println("-----Outputs-----");
-        System.out.println("Here is your Monogram: "+fi+mi+li); // compiling the letters
+        System.out.println("Here is your Monogram: "+ Monogram); // compiling the letters
 
 
     }
