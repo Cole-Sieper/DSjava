@@ -1,6 +1,6 @@
 // Cole Sieper
 // 10/30/23
-// HW 8 Part 8
+// HW 8 Part A
 
 
 import java.util.Scanner;
