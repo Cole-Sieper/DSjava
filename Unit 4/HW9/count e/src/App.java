@@ -2,6 +2,8 @@
 // 11/1/23
 // HW 9 Part B
 
+//used a little help from chat gpt to figure out the check if e thing
+
 import java.util.Scanner;
 
 
@@ -30,7 +32,7 @@ public class App {
         }
 
         // output
-        System.out.println("The letter 'e' occurs " + E_count + " times in the phrase.");
+        System.out.println("The letter E occurs " + E_count + " time(s) in the phrase.");
         
     }
 }
