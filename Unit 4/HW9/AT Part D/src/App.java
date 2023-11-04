@@ -67,6 +67,10 @@ public class App {
         die.roll();
         die.display();
 
+
+
+
+        
         }
 
     }
