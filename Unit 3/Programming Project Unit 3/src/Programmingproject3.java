@@ -17,66 +17,59 @@ class DoorSystem {
     public enum GearShift {P, N, D, ONE, TWO, THREE, R}
 
     // variable for inputs 
-    String door_input = "000000000";
+    String door_input = "00000000P";
 
-    String LDDBint = "0";
-    String RDDBint = "0";
-    String child_lockint = "0";
-    String master_unlockint = "0";
-    String LDIHint = "0";
-    String RDIHint = "0"; 
-    String LDOHint = "0";
-    String RDOHint = "0";
-    String Gear = "1";
+    Boolean LDDB;
+     Boolean RDDB;
+     Boolean child_lock;
+     Boolean master_unlock;
+     Boolean LDIH;
+     Boolean RDIH; 
+     Boolean LDOH;
+     Boolean RDOH;
+     DoorSystem.GearShift gearShift = GearShift.P;
 
-    /* 
-    // following order of inputs (0 = Off, 1 = On)
-    String LDDB = door_input.substring(0,1);
-    String RDDB = door_input.substring(1,2);
-    String child_lock = door_input.substring(2,3);
-    String master_unlock = door_input.substring(3,4);
+    String LDDB_in = "0";
+    String RDDB_in = "0";
+    String child_lock_in = "0";
+    String master_unlock_in = "0";
+    String LDIH_in = "0";
+    String RDIH_in = "0"; 
+    String LDOH_in = "0";
+    String RDOH_in = "0";
+    String Gear_in = "1";
 
-    //inside and outside handles
-    String LDIH = door_input.substring(4,5);
-    String RDIH = door_input.substring(5,6);
-    String LDOH = door_input.substring(6,7);
-    String RDOH = door_input.substring(7,8);
-    */
-
-    //starting gear setting
-    GearShift gearShift = GearShift.P;
     
     
     // methods that change the variables values of the object
+
+    
     // check if the left door is open
     // this function returns true if the left door is open.
 
     public boolean isLeftOpen() {
-        System.out.println(door_input.substring(8,9));
-        if (Gear.charAt(0) == '1') {
-            if (master_unlockint.charAt(0) == '1') {
-                if (LDDBint.charAt(0)=='1' || LDOHint.charAt(0)=='1') {
+        
+        if (gearShift == GearShift.P) {
+            if (master_unlock == true) {
+                if (LDDB == true || LDOH == true) {
                     return true;
                 } else {
-                    if (child_lockint.charAt(0)=='0' && LDIHint.charAt(0)=='1') {
-                        //System.out.println("true");
+                    if (child_lock == false && LDIH == true) {
                         return true;
                     } else { 
-                        //System.out.println("false");
                         return false;
                 }}
-            } else {return false;}
-        } else {return false;}  
+            } else {return false; }
+        } else {return false; }
     }
 
     public boolean isRightOpen() {
-        System.out.println(door_input.substring(8,9));
-        if (Gear.charAt(0) == '1') {
-            if (master_unlockint.charAt(0) == '1') {
-                if (RDDBint.charAt(0) == '1' || RDOHint.charAt(0) == '1') {
-                    return false;
+        if (gearShift == GearShift.P) {
+            if (master_unlock == true) {
+                if (RDDB == true || RDOH == true) {
+                    return true;
                 } else {
-                    if (child_lockint.charAt(0) == '0' && RDIHint.charAt(0) == '1') {
+                    if (child_lock == false && RDIH == true) {
                         return true;
                     } else { 
                         return false;
@@ -88,29 +81,85 @@ class DoorSystem {
     public void input() {
         
         System.out.print("Left Door Dashboard (0 = Off, 1 = On): ");
-        LDDBint = in.nextLine();
+        LDDB_in = in.nextLine();
         System.out.print("Right Door Dashboard (0 = Off, 1 = On): ");
-        RDDBint = in.nextLine();
+        RDDB_in = in.nextLine();
         System.out.print("Child Lock (0 = Off, 1 = On): ");
-        child_lockint = in.nextLine();
+        child_lock_in = in.nextLine();
         System.out.print("Master Unlock (0 = Off, 1 = On): ");
-        master_unlockint = in.nextLine();
+        master_unlock_in = in.nextLine();
         System.out.print("Left Door Inside Handle (0 = Off, 1 = On): ");
-        LDIHint = in.nextLine();
+        LDIH_in = in.nextLine();
         System.out.print("Right Door Inside Handle (0 = Off, 1 = On): ");
-        RDIHint = in.nextLine();
+        RDIH_in = in.nextLine();
         System.out.print("Left Door Outside Handle (0 = Off, 1 = On): ");
-        LDOHint = in.nextLine();
+        LDOH_in = in.nextLine();
         System.out.print("Right Door Outside Handle (0 = Off, 1 = On): ");
-        RDOHint = in.nextLine();
-        System.out.print("Gear Setting ( 1 = P | 2 = N | 3 = D | 4 = 1 | 5 = 2 | 6 = 3 | 7 = R ): ");
-        Gear = in.nextLine();
+        RDOH_in = in.nextLine();
+        System.out.print("Gear Setting ( P, N, D, 1, 2, 3, R ): ");
+        Gear_in = in.nextLine();
 
-        
+        Gear_in.toUpperCase();
+    
+        door_input = LDDB_in + RDDB_in + child_lock_in + master_unlock_in + LDIH_in + RDIH_in + LDOH_in + RDOH_in + Gear_in.toUpperCase();
 
-        door_input = LDDBint + RDDBint + child_lockint + master_unlockint + LDIHint + RDIHint + LDOHint + RDOHint + Gear;
+            // SET BOOLEANS
+            if (door_input.charAt(0)=='1') {
+                LDDB = true;
+            } else {
+                LDDB = false;
+            }
 
-        System.out.println(door_input);
+            if (door_input.charAt(1)=='1') {
+                RDDB = true;
+            } else {
+                RDDB = false;
+            }
+
+            if (door_input.charAt(2)=='1') {
+                child_lock = true;
+            } else {
+                child_lock = false;
+            }
+
+            if (door_input.charAt(3)=='1') {
+                master_unlock = true;
+            } else {
+                master_unlock = false;
+            }
+
+            if (door_input.charAt(4)=='1') {
+                LDIH = true;
+            } else {
+                LDIH = false;
+            }
+
+            if (door_input.charAt(5)=='1') {
+                RDIH = true;
+            } else {
+                RDIH = false;
+            }
+
+            if (door_input.charAt(6)=='1') {
+                LDOH = true;
+            } else {
+                LDOH = false;
+            }
+
+            if (door_input.charAt(7)=='1') {
+                RDOH = true;
+            } else {
+                RDOH = false;
+            }
+
+            if (door_input.charAt(8)=='P') {
+                gearShift = GearShift.P;
+            } else {
+                gearShift = GearShift.D;
+            }
+
+            System.out.print("Your input: ");
+            System.out.println(door_input);
 
     }
 
