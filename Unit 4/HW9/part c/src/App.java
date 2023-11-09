@@ -17,8 +17,9 @@ public class App {
         for (int count = 0; count < 11; count++) {
 
             number = Math.random();
-            number = number * 10;
-            System.out.printf("%02.1f%n",number);
+            number = number * 10 + 1;
+            int value = (int) number;
+            System.out.printf("%d%n",value);
 
         }
 

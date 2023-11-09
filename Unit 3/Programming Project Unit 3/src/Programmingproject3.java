@@ -83,30 +83,11 @@ class DoorSystem {
 
     public void input() {
         
-        System.out.print("Left Door Dashboard (0 = Off, 1 = On): ");
-        LDDB_in = in.nextLine();
-        System.out.print("Right Door Dashboard (0 = Off, 1 = On): ");
-        RDDB_in = in.nextLine();
-        System.out.print("Child Lock (0 = Off, 1 = On): ");
-        child_lock_in = in.nextLine();
-        System.out.print("Master Unlock (0 = Off, 1 = On): ");
-        master_unlock_in = in.nextLine();
-        System.out.print("Left Door Inside Handle (0 = Off, 1 = On): ");
-        LDIH_in = in.nextLine();
-        System.out.print("Right Door Inside Handle (0 = Off, 1 = On): ");
-        RDIH_in = in.nextLine();
-        System.out.print("Left Door Outside Handle (0 = Off, 1 = On): ");
-        LDOH_in = in.nextLine();
-        System.out.print("Right Door Outside Handle (0 = Off, 1 = On): ");
-        RDOH_in = in.nextLine();
-        System.out.print("Gear Setting ( P, N, D, 1, 2, 3, R ): ");
-        Gear_in = in.nextLine();
-
-        // amke sure the gear is set in upper case
-        Gear_in.toUpperCase();
+        System.out.print("Input (0 = Off, 1 = On) (LDDB, RDDB, child lock, master unlock, LDIH, RDIH, LDOH, RDOH, Gear): ");
+        door_input = in.nextLine();
     
         //combines all of the inputs into one string for later sorting
-        door_input = LDDB_in + RDDB_in + child_lock_in + master_unlock_in + LDIH_in + RDIH_in + LDOH_in + RDOH_in + Gear_in.toUpperCase();
+        door_input = door_input.toUpperCase();
 
             // SET BOOLEANS
             //checks each character position in the string to check the input, if on sets true
