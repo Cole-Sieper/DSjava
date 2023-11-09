@@ -39,9 +39,7 @@ class DoorSystem {
     String RDOH_in = "0";
     String Gear_in = "1";
 
-    
-    
-    // methods that change the variables values of the object
+
 
     
     // check if the left door is open
@@ -63,6 +61,9 @@ class DoorSystem {
         } else {return false; }
     }
 
+    //check if the right door is open
+    // returns true if it meets open conditions
+
     public boolean isRightOpen() {
         if (gearShift == GearShift.P) {
             if (master_unlock == true) {
@@ -77,6 +78,8 @@ class DoorSystem {
             } else {return false; }
         } else {return false; }
     }
+
+    // user inputs for each of the handles etc
 
     public void input() {
         
@@ -99,11 +102,14 @@ class DoorSystem {
         System.out.print("Gear Setting ( P, N, D, 1, 2, 3, R ): ");
         Gear_in = in.nextLine();
 
+        // amke sure the gear is set in upper case
         Gear_in.toUpperCase();
     
+        //combines all of the inputs into one string for later sorting
         door_input = LDDB_in + RDDB_in + child_lock_in + master_unlock_in + LDIH_in + RDIH_in + LDOH_in + RDOH_in + Gear_in.toUpperCase();
 
             // SET BOOLEANS
+            //checks each character position in the string to check the input, if on sets true
             if (door_input.charAt(0)=='1') {
                 LDDB = true;
             } else {
@@ -152,63 +158,20 @@ class DoorSystem {
                 RDOH = false;
             }
 
+            //checks gear inpt if P it sets the gear setting to park
             if (door_input.charAt(8)=='P') {
                 gearShift = GearShift.P;
             } else {
                 gearShift = GearShift.D;
             }
 
+            // outputs the whole string input to the user so they can see what they entered
             System.out.print("Your input: ");
             System.out.println(door_input);
 
     }
 
 
-
-
-/* 
-    public void shiftUp() {
-        if ("P" == door_input.substring(8, 9)) {
-            gearShift = GearShift.N;
-        }
-        if ("N" == door_input.substring(8, 9)) {
-            gearShift = GearShift.D;
-        }
-        if ("D" == door_input.substring(8, 9)) {
-            gearShift = GearShift.ONE;
-        }
-        if ("ONE" == door_input.substring(8, 9)) {
-            gearShift = GearShift.TWO;
-        }
-        if ("TWO" == door_input.substring(8, 9)) {
-            gearShift = GearShift.THREE;
-        }
-        if ("THREE" == door_input.substring(8, 9)) {
-            gearShift = GearShift.R;
-        }
-    }
-
-    public void shiftDown() {
-        if ("N" == door_input.substring(8, 9)) {
-            gearShift = GearShift.P;
-        }
-        if ("D" == door_input.substring(8, 9)) {
-            gearShift = GearShift.N;
-        }
-        if ("ONE" == door_input.substring(8, 9)) {
-            gearShift = GearShift.D;
-        }
-        if ("TWO" == door_input.substring(8, 9)) {
-            gearShift = GearShift.ONE;
-        }
-        if ("THREE" == door_input.substring(8, 9)) {
-            gearShift = GearShift.TWO;
-        }
-        if ("R" == door_input.substring(8, 9)) {
-            gearShift = GearShift.THREE;
-        }
-    }
-    */
 
 
 
