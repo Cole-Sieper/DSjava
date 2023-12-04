@@ -1,6 +1,6 @@
-// cole sieper
-//12/4/23
-//hw 13 part B
+// Cole Sieper
+// 12/4/23
+// HW 13 part B
 
 
 import java.awt.Color;
@@ -15,7 +15,7 @@ public class Checkered
       final int width = 100;
       g.setColor(Color.BLUE);
 
-      // Top row. Note that the top left corner of the drawing has coordinates (0, 0)
+      // Top row. 
       int x = 0;
       int y = 0;
       for (int i = 0; i < 2; i++)
@@ -87,8 +87,7 @@ public class Checkered
 
    }
 
-   // Do not look at the code in the main method
-   // Your code will go into the draw method above
+   
    public static void main(String[] args) 
    {
       final int FRAME_WIDTH = 400;

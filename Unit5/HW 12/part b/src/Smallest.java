@@ -50,7 +50,7 @@ public class Smallest {
 
         
                  
-        // if stae ments to find if each variable is the lowest
+        // if statements to find if each variable is the lowest
         
                     // check if x is the lowest
                     if (x >= 0 && x <= 9999999) {
