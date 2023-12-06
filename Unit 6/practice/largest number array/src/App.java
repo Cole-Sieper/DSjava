@@ -14,8 +14,9 @@ public class App {
 
         // VARIABLE TO HOLD THE LARGEST NUMBER   
         double largest = 0;
+        int i = 0;
 
-        for(int i = 0; i < VALUES.length; i++) 
+        for(i = 0; i < VALUES.length; i++) 
         {
 
             System.out.print("Plese enter a integer: ");
@@ -31,12 +32,12 @@ public class App {
             System.out.println("----- ------ ------");
             System.out.println("Here is your list of integers: ");
 
-            for (int ii=0;ii<VALUES.length; ii++) 
+            for (i=0;i<VALUES.length; i++) 
             {
-                if (VALUES[ii] == largest) {
-                    System.out.println(VALUES[ii]+" <- Largest Number");
+                if (VALUES[i] == largest) {
+                    System.out.println(VALUES[i]+" <- Largest Number");
                 } else {
-                    System.out.println(VALUES[ii]);
+                    System.out.println(VALUES[i]);
                 }
 
             }

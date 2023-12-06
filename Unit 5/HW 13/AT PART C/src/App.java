@@ -50,8 +50,8 @@ public class App {
    }
    public static void main(String[] args) 
    {
-      final int FRAME_WIDTH = 1000;
-      final int FRAME_HEIGHT = 1000;
+      final int FRAME_WIDTH = 500;
+      final int FRAME_HEIGHT = 500;
 
       JFrame frame = new JFrame();
       frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
