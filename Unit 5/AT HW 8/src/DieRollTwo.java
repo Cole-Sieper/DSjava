@@ -15,7 +15,9 @@
 
     public Die(int initalFace) {
 
+        if (initalFace > 0 && initalFace < 7) {
         dieFace = initalFace;
+        } else { dieFace = 1;}
 
     }
 
