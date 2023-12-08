@@ -9,12 +9,15 @@ public class ProjectTwo {
     public static void main(String[] args) throws Exception {
 
         Scanner in = new Scanner(System.in);
+
+        // inital user inputs to get a zip code in string form
         
         System.out.print("Please enter a zip code: ");
         String zipcode = in.nextLine();
 
 
-
+        // pulling the moethod cose and using the zipcode as a input
+        
         printBarCode(zipcode);
 
 
@@ -26,6 +29,8 @@ public class ProjectTwo {
     public static void getEncodedDigit(int d) {
 
         
+        // takes each split up number from the pring barcode method and checks what number and prints the right pattern
+
         //print out each digit
         if (d == 1) {
         System.out.print(":::||");
@@ -69,6 +74,8 @@ public class ProjectTwo {
         int checkDigit = 0;
 
         String newZip = zipCode;
+
+        // splits up each number the same way as the barcode method to then calulate the check digit number
 
         String s1 = newZip.substring(0,1);
         String s2 = newZip.substring(1,2);
@@ -119,6 +126,12 @@ public class ProjectTwo {
 
     }
     public static void printBarCode(String zipCode) {
+
+        /* This method take the inputed string then slipt up each number and converts it into a int
+        then it puts each number into the get ecoded digit method to print out the right patterns for the barcode.
+        finally it gives zipcode to the check digit method to calulate the right final digit a
+        nd then prints it using the get encoded digit method
+         */
 
         String newZip = zipCode;
 
