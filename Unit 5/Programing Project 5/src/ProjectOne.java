@@ -1,6 +1,7 @@
 // Cole Sieper
 // 12/7/23
 // Programming Project 5 Project 1
+// Parsing Number
 
 import java.util.Scanner;
 
