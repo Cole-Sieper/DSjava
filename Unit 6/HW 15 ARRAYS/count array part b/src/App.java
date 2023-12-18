@@ -52,6 +52,16 @@ public class App {
             }
         }
 
+
+            for (i=0; i < currentSize+1; i++) {
+
+                System.err.print(VALUES[i]+",");
+
+            }
+
+
+        // count a nuber in the array
+
         int count_num = 0;
 
         System.out.print("Please enter a integer to count: ");
@@ -71,6 +81,11 @@ public class App {
 
         }
 
+
+
+        //OUTPUTS THE VALUES
+
+
         System.out.println();
 
         if (count == 1) {
@@ -80,7 +95,7 @@ public class App {
         } else {
 
             System.out.println("The number "+count_num+" occured "+count+" times!");
-            
+
         }
 
 
