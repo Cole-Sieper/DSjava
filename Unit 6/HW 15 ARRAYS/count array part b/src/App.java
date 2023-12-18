@@ -55,7 +55,7 @@ public class App {
 
             for (i=0; i < currentSize+1; i++) {
 
-                System.err.print(VALUES[i]+",");
+                System.err.print(VALUES[i]+", ");
 
             }
 
@@ -64,6 +64,7 @@ public class App {
 
         int count_num = 0;
 
+        System.out.println();
         System.out.print("Please enter a integer to count: ");
         count_num = in.nextInt();
 
