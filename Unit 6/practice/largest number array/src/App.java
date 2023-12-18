@@ -42,9 +42,26 @@ public class App {
 
             }
 
+
+
+            double[] EPIC = {12.4,123.1,14131.2,123.4,23,211234.3}; 
+
+            for (i = 0; i < EPIC.length; i++){
+            if (i >0) {
+                System.out.print(" | ");
+
+
+            }
+            System.out.print(EPIC[i]);
+            
+            }
+
+
+
+
+
+
         }
-
-
 
 
     }
