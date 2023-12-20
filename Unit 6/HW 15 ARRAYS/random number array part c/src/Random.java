@@ -31,7 +31,7 @@ public class Random {
 
         }
 
-        System.out.println(linearSearch(value, 4));
+        
 
 
 
@@ -42,8 +42,11 @@ public class Random {
 
         Arrays.sort(array);
     
+        int search = 0;
 
-        return Arrays.binarySearch(array,tgtVal); 
+        search = Arrays.binarySearch(array,tgtVal); 
+
+        if ()
 
         
         // double search_time = 0;

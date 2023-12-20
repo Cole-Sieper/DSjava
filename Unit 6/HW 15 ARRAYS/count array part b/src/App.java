@@ -53,17 +53,20 @@ public class App {
         }
 
 
-            for (i=0; i < currentSize+1; i++) {
+            for (i=0; i < currentSize; i++) {
 
-                System.err.print(VALUES[i]+", ");
-
+                if (i == currentSize-1){
+                   System.out.print(VALUES[i]); 
+                }else {
+                System.out.print(VALUES[i]+", ");
+                }
             }
 
 
         // count a nuber in the array
 
         int count_num = 0;
-
+            
         System.out.println();
         System.out.print("Please enter a integer to count: ");
         count_num = in.nextInt();
