@@ -6,7 +6,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class App {
+public class Random {
     public static void main(String[] args) throws Exception {
         
 
@@ -31,6 +31,7 @@ public class App {
 
         }
 
+        System.out.println(linearSearch(value, 4));
 
 
 
@@ -40,8 +41,15 @@ public class App {
     public static int linearSearch(int[] array, int tgtVal) {
 
         Arrays.sort(array);
+    
 
-        Arrays.binarySearch(array);
+        return Arrays.binarySearch(array,tgtVal); 
+
+        
+        // double search_time = 0;
+        // search_time = System.currentTimeMillis();
+
+
 
 
 
