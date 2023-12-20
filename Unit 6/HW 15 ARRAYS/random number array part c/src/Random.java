@@ -31,8 +31,24 @@ public class Random {
 
         }
 
+        // initialize the target value
+        int target = 0;
         
+        // USER INPUTS TARGET NUM
 
+        System.out.print("Please enter a number to search for: ");
+        target = in.nextInt();
+
+
+        // OUTPUT
+
+        int output = linearSearch(value, target);
+    
+         if (output >= 0) {
+            System.out.println("The number "+target+" was found in the array!");
+        } else {
+            System.out.println("The number "+target+" was not found in the array :(");
+        }
 
 
 
@@ -42,12 +58,13 @@ public class Random {
 
         Arrays.sort(array);
     
-        int search = 0;
+        int search;
 
         search = Arrays.binarySearch(array,tgtVal); 
 
-        if ()
+            return search;
 
+       
         
         // double search_time = 0;
         // search_time = System.currentTimeMillis();
