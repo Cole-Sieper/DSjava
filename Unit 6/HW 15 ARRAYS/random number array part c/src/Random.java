@@ -21,7 +21,7 @@ public class Random {
 
         int[] value = new int[10000];
 
-        for (int i = 0; i <= 10000 ; i++) {
+        for (int i = 0; i < 10000 ; i++) {
 
             number = Math.random();
             number = number * 10000 + 1;
@@ -33,6 +33,9 @@ public class Random {
 
         // initialize the target value
         int target = 0;
+        
+        
+        /* 
         
         // USER INPUTS TARGET NUM
 
@@ -50,7 +53,33 @@ public class Random {
             System.out.println("The number "+target+" was not found in the array :(");
         }
 
+        */
+        
 
+        for (int i = 1; i < 11; i++ ) {
+        
+            
+            System.out.print(i+") Enter 10 integers to search for: ");
+            target = in.nextInt();
+
+            int output = linearSearch(value, target);
+            double searchtime = System.currentTimeMillis();
+
+            
+
+            
+                if (output >= 0) {
+                System.out.println("The number "+target+" WAS found in the array!");
+                System.out.println("Search-time: "+searchtime);
+            } else {
+                System.out.println("The number "+target+" WAS NOT found in the array :(");
+                System.out.println("Search-time: "+searchtime);
+            }
+            System.out.println();
+
+        }
+        
+        
 
     }
 
@@ -58,11 +87,11 @@ public class Random {
 
         Arrays.sort(array);
     
-        int search;
+        int pos;
 
-        search = Arrays.binarySearch(array,tgtVal); 
+        pos = Arrays.binarySearch(array,tgtVal); 
 
-            return search;
+            return pos;
 
        
         
