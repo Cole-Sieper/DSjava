@@ -62,6 +62,8 @@ public class App {
 
                     list.remove(i);
 
+                    i = i - 1;
+
                 } 
 
             }
