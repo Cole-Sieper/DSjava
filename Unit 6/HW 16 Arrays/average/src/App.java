@@ -42,7 +42,7 @@ public class App {
 
             } else {
 
-                //convert string to an integer
+                //convert string to an double
 
                 double input_num = Double.parseDouble(input);
 
