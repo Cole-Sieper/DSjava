@@ -26,7 +26,9 @@ public class App {
         System.out.println("First Array: ");
         printArray(array1);
 
+        
         System.out.println();
+
 
         System.out.println("Second Array: ");
         printArray(array2);
