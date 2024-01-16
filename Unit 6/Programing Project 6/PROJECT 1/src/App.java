@@ -10,7 +10,6 @@ All elements in reverse order.
 Only the first and last element.
  */
 
-
  import java.util.Scanner;
  import java.util.Arrays;
 
@@ -41,7 +40,7 @@ public class App {
         System.out.println("----- ARRAY INITIALIZED");
         System.out.println();
 
-
+        
         for (int i = 0; i < value.length; i++ ) {
 
             System.out.println(value[i]);
