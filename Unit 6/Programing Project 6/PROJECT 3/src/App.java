@@ -1,6 +1,6 @@
 // Cole Sieper
 // 1/16/24
-// Project 3
+// Project 3: Tic Tac Toe
 
 import java.util.Scanner;
 
@@ -46,8 +46,23 @@ public class App {
 
             System.out.print("Enter row (0, 1, or 2): ");
             row = in.nextInt();
+
+            if (row == 0 || row == 1 || row == 2) {
+            } else {
+            System.out.println("ERROR: INVALID INPUT (Only 0, 1, or 2 allowed)");
+            System.out.print("Enter row (0, 1, or 2): ");
+            row = in.nextInt();
+            }
+
             System.out.print("Enter column (0, 1, or 2): ");
             col = in.nextInt();
+
+            if (col == 0 || col == 1 || col == 2) {
+            } else {
+            System.out.println("ERROR: INVALID INPUT (Only 0, 1, or 2 allowed)");
+            System.out.print("Enter column (0, 1, or 2): ");
+            col = in.nextInt();
+            }
 
             if (board[row][col] == 'X' || board[row][col] == 'O') {
 
@@ -132,25 +147,5 @@ public class App {
 
 
     }
-
-/* 
-    public void board(int row, int col) {
-
-
-        char[][] Board = {
-
-            {'*','*','*'},
-            {'*','*','*'},
-            {'*','*','*'}
-
-        }
-
-    }
-*/
         
-
-
-    
-
-
 }
