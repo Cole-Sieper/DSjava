@@ -14,6 +14,7 @@ public class App {
 
         int row;
         int col;
+        int Turn = 1; 
         
 
         char[][] board = {
@@ -27,8 +28,10 @@ public class App {
         // 0 = Player O || 1 = Player X
         while (true) {
         
-        int Turn = 1; 
+        
         char currentPlayer = '*';
+
+            printBoard(board);
 
 
             if (Turn % 2 == 1) 
@@ -38,7 +41,7 @@ public class App {
 
 
             System.out.println();
-            System.out.println(currentPlayer + "'s Turn");
+            System.out.println("Player "+ currentPlayer + "'s Turn");
             System.out.println();
 
             System.out.print("Enter row (0, 1, or 2): ");
@@ -47,10 +50,13 @@ public class App {
             col = in.nextInt();
 
             if (board[row][col] == 'X' || board[row][col] == 'O') {
-                System.out.println();
+
+                printBoard(board);
+
                 System.out.println("ERROR: LOCATION FILLED");
-                System.out.println("Please Re-Enter input: ");
-                
+                System.out.println("Player "+ currentPlayer + "'s Turn");
+                System.out.println();
+
                 System.out.print("Enter row (0, 1, or 2): ");
                 row = in.nextInt();
                 System.out.print("Enter column (0, 1, or 2): ");
@@ -79,17 +85,17 @@ public class App {
 
     public static boolean checkWin (char[][] board) {
         for (int i = 0; i < 3; i++) {
-            if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
+            if (board[i][0] != '*' && board[i][0] == board[i][1] && board[i][1] == board[i][2]) {
                 return true; // Check rows
             }
-            if (board[0][i] != ' ' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
+            if (board[0][i] != '*' && board[0][i] == board[1][i] && board[1][i] == board[2][i]) {
                 return true; // Check columns
             }
         }
-        if (board[0][0] != ' ' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
+        if (board[0][0] != '*' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             return true; // Check main diagonal
         }
-        if (board[0][2] != ' ' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+        if (board[0][2] != '*' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
             return true; // Check anti-diagonal
         }
         return false;
