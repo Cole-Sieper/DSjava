@@ -9,10 +9,10 @@ import java.util.ArrayList;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class MyProgram {
+public class App {
     public static void main(String[] args) throws FileNotFoundException {
         
-        File inputFile = new File("temps.txt");
+        File inputFile = new File("temps");
         Scanner in = new Scanner(inputFile);
 
         ArrayList<Integer> Number = new ArrayList<Integer>();
@@ -25,7 +25,7 @@ public class MyProgram {
        
         
         // scan values
-        while (in.hasNext()) {
+        while (in.hasNextInt()) {
 
             int value = in.nextInt();
             Number.add(value);
