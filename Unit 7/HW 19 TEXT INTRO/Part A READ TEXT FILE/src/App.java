@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws FileNotFoundException {
         
-        File inputFile = new File("temps");
+        File inputFile = new File("temps.txt");
         Scanner in = new Scanner(inputFile);
 
         ArrayList<Integer> Number = new ArrayList<Integer>();
