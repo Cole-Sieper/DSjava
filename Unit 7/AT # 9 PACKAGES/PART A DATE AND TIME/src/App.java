@@ -6,8 +6,8 @@ public class App {
        
 
 
-        System.out.println(LocalDate.now());
-        System.out.println(LocalTime.now());
+        System.out.println("Today's date is "+LocalDate.now());
+        System.out.println("The time is "+LocalTime.now());
 
 
 
