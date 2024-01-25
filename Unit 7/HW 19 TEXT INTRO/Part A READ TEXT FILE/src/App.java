@@ -25,13 +25,13 @@ public class App {
        
         
         // scan values
-        while (in.hasNextInt()) {
+        while (in.hasNext()) {
 
             int value = in.nextInt();
             Number.add(value);
 
         }
-        in.close();
+        
 
 
         // find lowest temp
@@ -55,16 +55,16 @@ public class App {
         for (int i = 0; i < Number.size(); i++) {
 
             if (Number.get(i) == lowestTemp) {
-                System.out.println(Number.get(i) + "<-- Lowest Temp");
+                System.out.printf("%3d  <-- Lowest Temp %n",Number.get(i));
             } else {
-                System.out.println(Number.get(i));
+                System.out.printf("%3d%n",Number.get(i));
             }
 
         }
 
 
 
-
+            in.close();
 
 
 
