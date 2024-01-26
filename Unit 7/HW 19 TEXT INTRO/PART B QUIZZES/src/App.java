@@ -58,11 +58,11 @@ public class App {
 
             int quizNum = i + 1;
 
-            System.out.printf("Quiz %03d: %3.2f%n", quizNum, quizzes.get(i));
+            out.printf("Quiz %03d: %04.2f%n", quizNum, quizzes.get(i));
             
             if ( i == quizzes.size()-1) {
-            System.out.println("----------------");
-            System.out.printf("Average: %3.2f%n", average);
+            out.println("----------------");
+            out.printf("Average: %3.2f%n", average);
             }
 
 
@@ -74,6 +74,7 @@ public class App {
 
 
             in.close();
+            out.close();
 
 
 
