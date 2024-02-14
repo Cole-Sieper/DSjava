@@ -18,17 +18,18 @@ public class App {
 
             String year = in.next().trim();
 
-            if (Character.isDigit(year.charAt(0))) {
+            try {
 
                 int YEAR = Integer.parseInt(year);
 
                 System.out.println(name+" was born in "+ year+".");
 
-            } else {
+                
+            } catch (NumberFormatException Exception) {
 
                 System.out.println("I do not know what year "+name+" was born.");
 
-            }
+        }
             
 
 
