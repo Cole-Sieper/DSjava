@@ -4,12 +4,13 @@ package mow;
 public class Yard {
     
 
-    public char LAWN_ARRAY[][];
+    private char[][] lawnArray;
+    private Mower mower = new Mower();
 
 
     public void createLawn(int height, int width) {
 
-        char[][] lawnArray = new char[height][width];
+        lawnArray = new char[height][width];
 
         // -- EDGES --
 
@@ -29,7 +30,6 @@ public class Yard {
             }
             }
         }
-
 
         /*
         for (int i = 0; i < lawnArray.length; i++) { //left edge
@@ -64,52 +64,69 @@ public class Yard {
         }
         */
 
-        LAWN_ARRAY = lawnArray;
-
         }
+
 
 
     public void lawnStatus(int r, int c) {
 
-        System.out.println(LAWN_ARRAY[r][c]);
+        System.out.println(lawnArray[r][c]);
 
+    }
+
+    public char getValue(int r, int c) {
+        return lawnArray[r][c];
     }
 
     public  void mow(int r, int c, char mowed) {
-
-        LAWN_ARRAY[r][c] = mowed;
-
+        lawnArray[r][c] = mowed;
     }
 
     public int height() { // does not include bricks
-
-        int height = LAWN_ARRAY.length - 2;
-
+        int height = lawnArray.length - 2;
         return height;
-
     }
 
     public int width() { // does not include bricks
-
-
-
-        int width = LAWN_ARRAY[0].length - 2;
-
+        int width = lawnArray[0].length - 2;
         return width;
+    }
+
+    /* 
+    public void setMower() {
+
+        if (mower.getDir()==0) {
+            lawnArray[mower.getRow()][mower.getCol()] = '^';
+        }
+        if (mower.getDir()==1) {
+            lawnArray[mower.getRow()][mower.getCol()] = '>';
+        }
+        if (mower.getDir()==2) {
+            lawnArray[mower.getRow()][mower.getCol()] = 'v';
+        }
+        if (mower.getDir()==3) {
+            lawnArray[mower.getRow()][mower.getCol()] = '<';
+        }
 
     }
 
+    */
+
     public void printLawn() {
 
+        int height = lawnArray.length;
+        int width = lawnArray[0].length;
 
-        int height = LAWN_ARRAY.length;
-        int width = LAWN_ARRAY[0].length;
+        //setMower();
+
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
-            System.out.print(LAWN_ARRAY[i][j]);
+            System.out.print(lawnArray[i][j]);
             }
             System.out.println();
         }
+
+        
 
     }
 

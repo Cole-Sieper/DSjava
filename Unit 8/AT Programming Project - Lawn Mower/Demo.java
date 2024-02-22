@@ -2,6 +2,7 @@
 import java.util.Scanner;
 
 import mow.Yard;
+import mow.Mower;
 
 public class Demo {
 
@@ -10,6 +11,7 @@ public class Demo {
         clearScreen();
         
         Yard yard = new Yard();
+        Mower mower = new Mower();
         Scanner in = new Scanner(System.in);
 
         int height;
@@ -28,6 +30,27 @@ public class Demo {
 
         yard.printLawn();
 
+        
+        for (int i = 0; i < 50; i++) {
+
+            mower.mow(yard);
+
+            mower.sense(yard);
+            
+                while (mower.checkBrick == 1) {
+                    mower.turnRght();
+                    mower.sense(yard);
+                }
+            
+                mower.moveFoward();
+
+            delay(500);
+
+                clearScreen();
+                clearScreen();
+
+            yard.printLawn();
+        }
 
 
 
@@ -38,6 +61,15 @@ public class Demo {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+
+    public static void delay(long mseconds) {
+        try {
+            Thread.sleep(mseconds);
+        } catch (InterruptedException e) {
+            System.err.println("InterruptedException received!");
+        }
+    }
+ 
 
 
 }
