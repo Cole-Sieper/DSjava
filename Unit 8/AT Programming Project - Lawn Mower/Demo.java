@@ -27,6 +27,8 @@ public class Demo {
 
         yard.createLawn(height + 2, width + 2 );
 
+        
+
 
         yard.printLawn();
 

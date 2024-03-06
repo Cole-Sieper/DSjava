@@ -4,7 +4,9 @@ public class Mower {
 
     private int rowPos = 1;
     private int colPos = 1;
-    private int direction; // 0 = up  1 = right  2 = down  3 = left
+    private int lastRow = 1;
+    private int lastCol = 1;
+    private int direction = 1; // 0 = up  1 = right  2 = down  3 = left
     public int checkBrick; // 0 = no brink in front  1 = BRICK IN FRONT
 
     public int getRow() {
@@ -44,6 +46,9 @@ public class Mower {
     }
 
     public void moveFoward() {
+
+        lastRow = rowPos;
+        lastCol = colPos;
         
         if (direction == 0) {
             setPos(rowPos-1, colPos);
@@ -60,8 +65,46 @@ public class Mower {
 
     }
 
+    /* 
+    public void setMower() {
+
+        if (mower.getDir()==0) {
+            lawnArray[mower.getRow()][mower.getCol()] = '^';
+        }
+        if (mower.getDir()==1) {
+            lawnArray[mower.getRow()][mower.getCol()] = '>';
+        }
+        if (mower.getDir()==2) {
+            lawnArray[mower.getRow()][mower.getCol()] = 'v';
+        }
+        if (mower.getDir()==3) {
+            lawnArray[mower.getRow()][mower.getCol()] = '<';
+        }
+
+    }
+
+    */
+
     public void mow(Yard yard) {
-        yard.mow(rowPos, colPos, ' ');
+        //yard.mow(rowPos, colPos, ' ');
+
+        if (direction == 0) {
+            yard.mow(rowPos, colPos, '^');
+        }
+        if (direction == 1) {  
+            yard.mow(rowPos, colPos, '>');
+        }
+        if (direction == 2) {
+            yard.mow(rowPos, colPos, 'v');
+        }
+        if (direction == 3) {
+            yard.mow(rowPos, colPos, '<');
+        }
+
+        // set last position to blank
+        yard.mow(lastRow, lastCol, ' ');
+        
+
     }
 
 
