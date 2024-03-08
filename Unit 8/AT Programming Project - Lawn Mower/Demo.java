@@ -25,26 +25,38 @@ public class Demo {
         System.out.print("Please enter the width of the yard (# of rows): ");
         width = in.nextInt();
 
-        yard.createLawn(height + 2, width + 2 );
+        int newHeight = height +2;
+        int newWidth = width +2;
 
-        
+        yard.createLawn(newHeight, newWidth);
 
-
+        mower.initialize(yard,newHeight,newWidth);
         yard.printLawn();
 
-        
-        for (int i = 0; i < 50; i++) {
 
-            mower.mow(yard);
+        int i = 0;
+        
+        while (true) {
 
             mower.sense(yard);
             
-                while (mower.checkBrick == 1) {
+                /*while (mower.checkFront == 1) {
                     mower.turnRght();
                     mower.sense(yard);
+                }*/
+
+                if (mower.checkFront == 1) {
+                    if (mower.checkRight == 1) {
+                        if (mower.checkLeft == 1) {
+                            break;
+                        } else {mower.turnLeft();}
+                    } else {mower.turnRght();}
                 }
+                
             
                 mower.moveFoward();
+
+                mower.mow(yard);
 
             delay(500);
 
@@ -52,9 +64,13 @@ public class Demo {
                 clearScreen();
 
             yard.printLawn();
+        
+
+            i++;
         }
 
-
+        //System.out.println(mower.getRow());
+        //System.out.println(mower.getCol());
 
 
     }

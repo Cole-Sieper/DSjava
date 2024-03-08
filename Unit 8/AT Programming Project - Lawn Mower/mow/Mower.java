@@ -4,10 +4,12 @@ public class Mower {
 
     private int rowPos = 1;
     private int colPos = 1;
-    private int lastRow = 1;
-    private int lastCol = 1;
+    private int lastRow;
+    private int lastCol;
     private int direction = 1; // 0 = up  1 = right  2 = down  3 = left
-    public int checkBrick; // 0 = no brink in front  1 = BRICK IN FRONT
+    public int checkFront; // 0 = no brink in front  1 = BRICK/BLANK IN FRONT
+    public int checkRight; // 0 = no brink in front  1 = BRICK/BLANK IN RIGHT
+    public int checkLeft; // 0 = no brink in front  1 = BRICK/BLANK IN LEFT
 
     public int getRow() {
         return rowPos;
@@ -107,37 +109,123 @@ public class Mower {
 
     }
 
+    public void initialize(Yard yard, int height, int width) {
+        //yard.mow(rowPos, colPos, ' ');
+
+        //random corner
+        double randomNumber = Math.random();
+        int randomNumberInRange = (int) (randomNumber * 4) + 1;
+
+        if(randomNumberInRange == 1)
+        rowPos =1; colPos =1;
+        if(randomNumberInRange == 2)
+        rowPos = 1; colPos = width-2;
+        if(randomNumberInRange == 3)
+        rowPos = height-2; colPos = 1;
+        if(randomNumberInRange == 4)
+        rowPos = height-2; colPos = width-2;
+
+        //randm direction
+        double randomNumber2 = Math.random();
+        int randomNumberInRange2 = (int) (randomNumber2 * 4) + 1;
+
+        if(randomNumberInRange2 == 1)
+        setDir(0);
+        if(randomNumberInRange2 == 2)
+        setDir(1);
+        if(randomNumberInRange2 == 3)
+        setDir(2);
+        if(randomNumberInRange2 == 4)
+        setDir(3);
+
+        if (direction == 0) {
+            yard.mow(rowPos, colPos, '^');
+        }
+        if (direction == 1) {  
+            yard.mow(rowPos, colPos, '>');
+        }
+        if (direction == 2) {
+            yard.mow(rowPos, colPos, 'v');
+        }
+        if (direction == 3) {
+            yard.mow(rowPos, colPos, '<');
+        }
+
+        
+        
+
+    }
+
 
     public void sense(Yard yard) {
         
         if (direction == 0) {
             if (yard.getValue(rowPos-1,colPos) == 'R' || yard.getValue(rowPos-1,colPos) == ' ') {
-                checkBrick = 1;
+                checkFront = 1;
             } else {
-                checkBrick = 0;
+                checkFront = 0;
+            }
+            if (yard.getValue(rowPos,colPos+1) == 'R' || yard.getValue(rowPos,colPos+1) == ' ') {
+                checkRight = 1;
+            } else {
+                checkRight = 0;
+            }
+            if (yard.getValue(rowPos,colPos-1) == 'R' || yard.getValue(rowPos,colPos-1) == ' ') {
+                checkLeft = 1;
+            } else {
+                checkLeft = 0;
             }
         }
         if (direction == 1) {
             if (yard.getValue(rowPos,colPos+1) == 'R' || yard.getValue(rowPos,colPos+1) == ' ') {
-                checkBrick = 1;
+                checkFront = 1;
             } else {
-                checkBrick = 0;
+                checkFront = 0;
+            }
+            if (yard.getValue(rowPos+1,colPos) == 'R' || yard.getValue(rowPos+1,colPos) == ' ') {
+                checkRight = 1;
+            } else {
+                checkRight = 0;
+            }
+            if (yard.getValue(rowPos-1,colPos) == 'R' || yard.getValue(rowPos-1,colPos) == ' ') {
+                checkLeft = 1;
+            } else {
+                checkLeft = 0;
             }
         }
         if (direction == 2) {
             if (yard.getValue(rowPos+1,colPos) == 'R' || yard.getValue(rowPos+1,colPos) == ' ') {
-                checkBrick = 1;
+                checkFront = 1;
             } else {
-                checkBrick = 0;
+                checkFront = 0;
+            }
+            if (yard.getValue(rowPos,colPos-1) == 'R' || yard.getValue(rowPos,colPos-1) == ' ') {
+                checkRight = 1;
+            } else {
+                checkRight = 0;
+            }
+            if (yard.getValue(rowPos,colPos+1) == 'R' || yard.getValue(rowPos,colPos+1) == ' ') {
+                checkLeft = 1;
+            } else {
+                checkLeft = 0;
             }
         }
         if (direction == 3) {
             if (yard.getValue(rowPos,colPos-1) == 'R' || yard.getValue(rowPos,colPos-1) == ' ') {
-                checkBrick = 1;
+                checkFront = 1;
             } else {
-                checkBrick = 0;
+                checkFront = 0;
             }
-
+            if (yard.getValue(rowPos-1,colPos) == 'R' || yard.getValue(rowPos-1,colPos) == ' ') {
+                checkRight = 1;
+            } else {
+                checkRight = 0;
+            }
+            if (yard.getValue(rowPos+1,colPos) == 'R' || yard.getValue(rowPos+1,colPos) == ' ') {
+                checkLeft = 1;
+            } else {
+                checkLeft = 0;
+            }
         }
     }
 
