@@ -1,3 +1,4 @@
+
 public class GearedBicycle extends Bicycle {
 
     private int gear;
