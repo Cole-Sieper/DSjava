@@ -29,7 +29,6 @@ public class Magic8Ball {
     public String displayAnswer() { 
         // take random number and deliver random answer
         int arrayPos = eightBallState - 1;
-
         return answers[arrayPos];
 
     }
