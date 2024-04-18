@@ -44,8 +44,8 @@ public class Board extends JPanel {
 
         g2d.fill(modifiedShape);
 
-        //g2d.setColor(Color.BLACK);
-        //g2d.drawString("Hello, world!", 20, 30);
+        g2d.setColor(Color.BLACK);
+        g2d.drawString("Hello, world!", 20, 30);
 
     }
 }
